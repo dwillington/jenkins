@@ -1,0 +1,40 @@
+##--PROJECT SETTINGS
+mal_code: ''
+agent: ''
+# 'jdk-16', 
+tools: ['jdk8u144', 'apache-maven-3.0.3']
+checkout_scm: false
+clean_up_workspace: false
+default_branch: 'default'
+workspace: ''
+
+##--REPORT SETTING
+group_id: 'com.tuc.flxa.report'
+artifact_id: ''
+version: '1.0-SNAPSHOT'
+packaging: 'html'
+repository: 'snapshots'
+release_repository: 'releases'
+nexus_url: 'http://blxblddev3:8081/artifactory'
+
+##--OTHER SETTING
+check_jenkins_job_status_wait_period: '300' # In seconds
+feature_branch_name_pattern: 'feature'
+develop_branch_name_pattern: 'develop'
+release_branch_name_pattern: 'release'
+main_branches: ['develop', 'master']
+additional_branches: ['feature', 'scan', 'soatestdev', 'release', 'soatestsit', 'soatestpat']
+all_branches: ['feature', 'develop', 'scan', 'soatestdev', 'release', 'soatestsit', 'soatestpat', 'master']
+time_report_branches: ['feature', 'develop', 'release', 'master']
+git_clone_timeout: '5' # In minutes
+git_clone_stage_name: 'GIT CLONE'
+report_file: 'report.html'
+
+##--MAVEN SETTINGS
+maven: 'apache-maven-3.0.3'
+global_maven_setting: 'artifactory-maven-settings.xml'
+
+##--NOTIFICATION SETTINGS
+notification_cases: ["ABORTED", "FAILURE", "UNSTABLE", "SUCCESS"]
+notification_email_sender: 'jenkins@hoj.td.com'
+notification_scm_account_id: 'CBDC-BITBUCKET-PIPELINE-CREDENTIAL'
